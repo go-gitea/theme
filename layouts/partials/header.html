@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
+    {{ .Hugo.Generator }}
+
+    {{ with .Params.goimport }}
+    <meta name="go-import" content="{{ . }}">
+    {{ end }}
+
+    {{ with .Params.gosource }}
+    <meta name="go-source" content="{{ . }}">
+    {{ end }}
+
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
+    <link rel="icon" type="image/x-icon" href="images/favicon.png">
+
+    <link rel="stylesheet" href="styles/main.css">
+    <script type="text/javascript" src="scripts/main.js"></script>
+  </head>
+  <body>
+    {{ partial "navbar" . }}

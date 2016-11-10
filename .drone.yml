@@ -1,0 +1,17 @@
+workspace:
+  path: src
+
+pipeline:
+  downstream:
+    image: plugins/downstream
+    repositories:
+      - go-gitea/website
+      - go-gitea/blog
+      - go-gitea/docs
+      - go-gitea/redirects
+    when:
+      event: push
+      branch: master
+
+  gitter:
+    image: plugins/gitter
