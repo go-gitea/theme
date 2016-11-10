@@ -4,6 +4,7 @@ workspace:
 pipeline:
   downstream:
     image: plugins/downstream
+    server: https://drone.gitea.io
     repositories:
       - go-gitea/website
       - go-gitea/blog
