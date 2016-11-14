@@ -2,7 +2,7 @@
 
 <html lang="en">
   <head>
-    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
+    <title>{{ if not .IsHome }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
     {{ .Hugo.Generator }}
 
     {{ with .Params.goimport }}
