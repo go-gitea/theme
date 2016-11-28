@@ -11,6 +11,11 @@ branch it will trigger rebuilds of all the related websites.
 
 Fork -> Patch -> Push -> Pull Request
 
+## Authors
+
+* [Maintainers](https://github.com/orgs/go-gitea/people)
+* [Contributors](https://github.com/go-gitea/theme/graphs/contributors)
+
 ## License
 
 This project is under the Apache-2.0 License. See the [LICENSE](LICENSE) file
