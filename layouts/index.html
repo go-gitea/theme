@@ -1,7 +1,17 @@
 {{ partial "header" . }}
+{{ partial "navbar" . }}
 
-{{ range where .Site.Pages "Type" "index" }}
-  {{ .Content }}
-{{ end }}
+<div class="container">
+	<div class="row">
+		<div class="col-lg-3 col-md-3 col-sm-4 sidebar-offcanvas" id="sidebar">
+			{{ partial "menu" . }}
+		</div>
+		<div class="col-lg-9 col-md-9 col-sm-8">
+			{{ range where .Site.Pages "Type" "index" }}
+				{{ .Content }}
+			{{ end }}
+		</div>
+	</div>
+</div>
 
 {{ partial "footer" . }}
