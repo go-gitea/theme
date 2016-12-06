@@ -1,38 +1,36 @@
-<ul class="nav navbar-nav navbar-right">
-	<li class="{{ if eq .Site.Params.Toplink "website" }}active{{ end }}">
-		<a href="https://gitea.io">
-			<i class="fa fa-home"></i>
-			{{ i18n "toplink_website" }}
-		</a>
-	</li>
-	<li class="{{ if eq .Site.Params.Toplink "blog" }}active{{ end }}">
-		<a href="https://blog.gitea.io">
-			<i class="fa fa-rss"></i>
-			{{ i18n "toplink_blog" }}
-		</a>
-	</li>
-	<li class="{{ if eq .Site.Params.Toplink "docs" }}active{{ end }}">
-		<a href="https://docs.gitea.io">
-			<i class="fa fa-question"></i>
-			{{ i18n "toplink_docs" }}
-		</a>
-	</li>
-	<li class="{{ if eq .Site.Params.Toplink "redirects" }}active{{ end }}">
-		<a href="https://code.gitea.io">
-			<i class="fa fa-code"></i>
-			{{ i18n "toplink_code" }}
-		</a>
-	</li>
-	<li>
-		<a href="https://dl.gitea.io">
-			<i class="fa fa-download"></i>
-			{{ i18n "toplink_downloads" }}
-		</a>
-	</li>
-	<li>
-		<a href="https://github.com/go-gitea" target="_blank">
-			<i class="fa fa-github"></i>
-			{{ i18n "toplink_github" }}
-		</a>
-	</li>
-</ul>
+<li class="nav-item {{ if eq .Site.Params.Toplink " website" }}active{{ end }}">
+<a class="nav-link" href="https://gitea.io">
+	<i class="fa fa-home"></i>
+	{{ i18n "toplink_website" }}
+</a>
+</li>
+<li class="nav-item {{ if eq .Site.Params.Toplink " blog" }}active{{ end }}">
+<a class="nav-link" href="https://blog.gitea.io">
+	<i class="fa fa-rss"></i>
+	{{ i18n "toplink_blog" }}
+</a>
+</li>
+<li class="nav-item {{ if eq .Site.Params.Toplink " docs" }}active{{ end }}">
+<a class="nav-link" href="https://docs.gitea.io">
+	<i class="fa fa-question"></i>
+	{{ i18n "toplink_docs" }}
+</a>
+</li>
+<li class="nav-item {{ if eq .Site.Params.Toplink " redirects" }}active{{ end }}">
+<a class="nav-link" href="https://code.gitea.io">
+	<i class="fa fa-code"></i>
+	{{ i18n "toplink_code" }}
+</a>
+</li>
+<li class="nav-item">
+	<a class="nav-link" href="https://dl.gitea.io">
+		<i class="fa fa-download"></i>
+		{{ i18n "toplink_downloads" }}
+	</a>
+</li>
+<li class="nav-item">
+	<a class="nav-link" href="https://github.com/go-gitea" target="_blank">
+		<i class="fa fa-github"></i>
+		{{ i18n "toplink_github" }}
+	</a>
+</li>

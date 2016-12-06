@@ -2,34 +2,23 @@
 
 <html lang="en">
 	<head>
-		<title>{{ if not .IsHome }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
 		{{ .Hugo.Generator }}
+		{{ with .Params.goimport }}<meta name="go-import" content="{{ . }}">{{ end }}
+		{{ with .Params.gosource }}<meta name="go-source" content="{{ . }}">{{ end }}
+		<title>{{ if not .IsHome }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
 
-		{{ with .Params.goimport }}
-		<meta name="go-import" content="{{ . }}">
-		{{ end }}
-
-		{{ with .Params.gosource }}
-		<meta name="go-source" content="{{ . }}">
-		{{ end }}
-
-		<base href="{{ .Site.BaseURL }}">
 		<link rel="canonical" href="{{ .Permalink }}">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="{{ .Site.BaseURL }}styles/main.css">
+		<link rel="shortcut icon" type="image/x-icon" href="{{ .Site.BaseURL }}images/favicon.png">
+		<link rel="icon" type="image/x-icon" href="{{ .Site.BaseURL }}images/favicon.png">
 
 		{{ with .RSSLink }}
 		<link href="{{ . }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />
 		<link href="{{ . }}" rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}" />
 		{{ end }}
-
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-		<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
-		<link rel="icon" type="image/x-icon" href="images/favicon.png">
-
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap-theme.min.css" />
-		<link rel="stylesheet" href="styles/main.css">
 	</head>
 	<body>
