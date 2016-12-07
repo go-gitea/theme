@@ -2,6 +2,13 @@ workspace:
   path: src
 
 pipeline:
+  build:
+    image: node
+    commands:
+      - npm install -q
+      - npm install -q -g gulp-cli
+      - gulp
+
   downstream:
     image: plugins/downstream
     server: https://drone.gitea.io
