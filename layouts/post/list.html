@@ -1,0 +1,51 @@
+{{ partial "header.html" . }}
+{{ partial "navbar.html" . }}
+
+<div class="container content">
+	<div class="row">
+		<div class="col-xs-12">
+			{{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}{{ range $paginator.Pages }}
+				<article>
+					<header>
+						<h2>
+							<a href="{{ .Permalink }}">
+								{{ .Title }}
+							</a>
+						</h2>
+						<p>
+							<i>{{ .Date.Format "Mon Jan 2, 2006" }}</i>
+							{{ i18n "authored_by" }}
+							<b>{{ .Params.author | default .Site.Params.author }}</b>
+						</p>
+					</header>
+
+					{{ .Summary }}
+
+					<a href="{{ .Permalink }}">
+						{{ i18n "read_more" }}
+					</a>
+				</article>
+			{{ end }}
+
+			{{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
+				<div>
+					{{ if and (.Paginator.HasPrev) (.Paginator.HasNext) }}
+						<a class="btn" href="{{ .Paginator.Prev.URL }}" role="button">{{ i18n "page_prev" }}</a>
+						<a class="btn" href="{{ .Paginator.Next.URL }}" role="button">{{ i18n "page_next" }}</a>
+					{{ end }}
+					{{ if and (.Paginator.HasPrev) (not .Paginator.HasNext) }}
+						<a class="btn" href="{{ .Paginator.Prev.URL }}" role="button">{{ i18n "page_prev" }}</a>
+						<a class="btn disabled" href="#" role="button" aria-disabled="true">{{ i18n "page_next" }}</a>
+					{{ end }}
+					{{ if and (not .Paginator.HasPrev) (.Paginator.HasNext) }}
+						<a class="btn disabled" href="#" role="button" aria-disabled="true">{{ i18n "page_prev" }}</a>
+						<a class="btn" href="{{ .Paginator.Next.URL }}" role="button">{{ i18n "page_next" }}</a>
+					{{ end }}
+				</div>
+			{{ end }}
+		</div>
+	</div>
+</div>
+
+{{ partial "footer.html" . }}
+

@@ -1,0 +1,27 @@
+{{ partial "header.html" . }}
+{{ partial "navbar.html" . }}
+
+<div class="container content">
+	<div class="row">
+		<div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+			<article>
+				<header>
+					<h2>
+						<a href="{{ .Permalink }}">
+							{{ .Title }}
+						</a>
+					</h2>
+					<p>
+						<i>{{ .Date.Format "Mon Jan 2, 2006" }}</i>
+						{{ i18n "authored_by" }}
+						<b>{{ .Params.author | default .Site.Params.author }}</b>
+					</p>
+				</header>
+
+				{{ .Content }}
+			</article>
+		</div>
+	</div>
+</div>
+
+{{ partial "footer.html" . }}

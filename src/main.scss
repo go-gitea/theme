@@ -1,0 +1,36 @@
+@import "colors";
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+.navbar {
+  padding: 21px 32px;
+  border-bottom: 1px solid $accent-color;
+}
+
+.navbar-brand {
+  padding: 0;
+
+  img {
+    height: 38px;
+  }
+}
+
+.footer {
+  width: 100%;
+  padding: 32px 0;
+  background-color: #f7f7f9;
+
+
+
+  p {
+    margin: 0;
+    padding: 16px 0;
+  }
+}
+
+.content {
+  margin: 64px auto;
+
+  blockquote{
+    @extend .blockquote;
+  }
+}

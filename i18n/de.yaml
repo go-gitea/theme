@@ -1,0 +1,29 @@
+- id: navbar_menu
+  translation: "Men&uuml;"
+
+- id: toplink_website
+  translation: "Website"
+
+- id: toplink_blog
+  translation: "Blog"
+
+- id: toplink_docs
+  translation: "Doku"
+
+- id: toplink_code
+  translation: "Quelltext"
+
+- id: toplink_downloads
+  translation: "Downloads"
+
+- id: toplink_github
+  translation: "GitHub"
+
+- id: read_more
+  translation: "Mehr..."
+
+- id: page_prev
+  translation: "Vorherige"
+
+- id: page_next
+  translation: "N&auml;chste"

@@ -1,0 +1,22 @@
+{
+  "name": "gitea-theme",
+  "description": "This is a Hugo theme that gets used within all of our websites like our blog, documentation and also the redirects.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/go-gitea/theme.git"
+  },
+  "author": "The Gitea Authors",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/go-gitea/theme/issues"
+  },
+  "homepage": "https://github.com/go-gitea/theme#readme",
+  "dependencies": {
+    "bootstrap": "^4.0.0-alpha.5"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^1.9.1"
+  }
+}

@@ -1,0 +1,12 @@
+<section>
+	<ul>
+		{{ $currentNode := . }}{{ range .Site.Menus.sidebar.ByWeight }}
+			<li class="{{ if $currentNode.IsMenuCurrent "sidebar" . }}active{{ end }}">
+				<a href="{{ .URL }}">
+					{{ .Pre }}
+					{{ .Name }}
+				</a>
+			</li>
+		{{ end }}
+	</ul>
+</section>

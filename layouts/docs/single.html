@@ -3,7 +3,10 @@
 
 <div class="container content">
 	<div class="row">
-		<div class="col-xs-12">
+		<div class="col-sm-3">
+			{{ partial "menu" . }}
+		</div>
+		<div class="col-sm-8">
 			{{ .Content }}
 		</div>
 	</div>
