@@ -1,12 +1,11 @@
 STYLES := static/styles
-DIST := dist
 
 .PHONY: all
 all: build
 
 .PHONY: clean
 clean:
-	rm -rf $(STYLES) $(DIST)
+	rm -rf $(STYLES) master.tar.gz
 
 .PHONY: install
 install:
@@ -19,13 +18,13 @@ build:
 
 .PHONY: release
 release:
-	mkdir -p dist/
-	cp -r archetypes/ dist/
-	cp -r i18n/ dist/
-	cp -r layouts/ dist/
-	cp -r static/ dist/
-	cp -r DCO dist/
-	cp -r LICENSE dist/
-	cp -r MAINTAINERS dist/
-	cp -r README.md dist/
-	cp -r theme.toml dist/
+	tar -cvzf master.tar.gz \
+		archetypes/ \
+		i18n/ \
+		layouts/ \
+		static/ \
+		DCO \
+		LICENSE \
+		MAINTAINERS \
+		README.md \
+		theme.toml
