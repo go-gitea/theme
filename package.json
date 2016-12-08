@@ -1,22 +1,36 @@
 {
   "name": "gitea-theme",
-  "description": "This is a Hugo theme that gets used within all of our websites like our blog, documentation and also the redirects.",
+  "version": "0.0.0",
+  "description": "A Hugo theme that gets used within all of our websites.",
+  "homepage": "https://github.com/go-gitea/theme#readme",
+  "license": "Apache-2.0",
+  "author": {
+    "name": "The Gitea Authors",
+    "email": "team@gitea.io"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/go-gitea/theme.git"
+    "url": "https://github.com/go-gitea/theme.git"
   },
-  "author": "The Gitea Authors",
-  "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/go-gitea/theme/issues"
+    "url": "https://github.com/go-gitea/theme/issues",
+    "email": "team@gitea.io"
   },
-  "homepage": "https://github.com/go-gitea/theme#readme",
+  "scripts": {
+    "clean": "gulp clean",
+    "build": "gulp build",
+    "release": "gulp release",
+    "watch": "gulp watch"
+  },
   "dependencies": {
     "bootstrap": "^4.0.0-alpha.5"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-gzip": "^1.4.0",
     "gulp-sass": "^2.3.2",
-    "gulp-sourcemaps": "^1.9.1"
+    "gulp-sourcemaps": "^1.9.1",
+    "gulp-tar": "^1.9.0"
   }
 }

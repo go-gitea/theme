@@ -3,22 +3,24 @@ workspace:
 
 pipeline:
   build:
-    image: node
+    image: library/node:latest
     commands:
-      - make install
-      - make build
-      - make release
+      - npm install -q
+      - npm run clean
+      - npm run build
+      - npm run release
 
   release:
     image: plugins/s3
     path_style: true
-    source: master.tar.gz
-    target: /theme/
+    strip_prefix: dist/
+    source: dist/master.tar.gz
+    target: /theme
     when:
       event: [ push ]
       branch: [ master ]
 
-  downstream:
+  trigger:
     image: plugins/downstream
     server: https://drone.gitea.io
     repositories:
@@ -27,8 +29,8 @@ pipeline:
       - go-gitea/docs
       - go-gitea/redirects
     when:
-      event: push
-      branch: master
+      event: [ push ]
+      branch: [ master ]
 
   gitter:
     image: plugins/gitter
