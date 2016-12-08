@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
-var tar = require('gulp-tar');
+var tar = require('gulp-tar-path');
 var gzip = require('gulp-gzip');
 var clean = require('gulp-clean');
 
