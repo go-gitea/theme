@@ -22,6 +22,14 @@
 			</article>
 		</div>
 	</div>
+
+	{{ if .Site.DisqusShortname }}
+		<div class="row">
+			<div class="col-xs-12">
+				{{ template "_internal/disqus.html" . }}
+			</div>
+		</div>
+	{{ end }}
 </div>
 
 {{ partial "footer.html" . }}
