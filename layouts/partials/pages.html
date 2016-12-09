@@ -1,12 +1,30 @@
-<section>
-	<ul>
-		{{ $currentNode := . }}{{ range .Site.Menus.sidebar.ByWeight }}
-			<li class="{{ if $currentNode.IsMenuCurrent "sidebar" . }}active{{ end }}">
-				<a href="{{ .URL }}">
-					{{ .Pre }}
-					{{ .Name }}
-				</a>
-			</li>
+<aside>
+	<ul class="nav">
+		{{ $currentNode := . }}{{ range .Site.Menus.sidebar }}
+			{{ if .HasChildren }}
+				<li class="nav-item">
+					<a class="nav-link" href="#">
+						{{ .Pre }}
+						{{ .Name }}
+					</a>
+					<ul>
+						{{ range .Children }}
+							<li class="nav-item">
+								<a class="nav-link{{ if $currentNode.IsMenuCurrent "sidebar" . }} active{{ end }}" href="{{ .URL | relLangURL }}">
+									{{ .Name }}
+								</a>
+							</li>
+						{{ end }}
+					</ul>
+				</li>
+			{{ else }}
+				<li class="nav-item">
+					<a class="nav-link{{ if $currentNode.HasMenuCurrent "sidebar" . }} active{{ end }}" href="{{ .URL | relLangURL }}">
+						{{ .Pre }}
+						{{ .Name }}
+					</a>
+				</li>
+			{{ end }}
 		{{ end }}
 	</ul>
-</section>
+</aside>

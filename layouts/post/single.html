@@ -3,7 +3,7 @@
 
 <div class="container content">
 	<div class="row">
-		<div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+		<div class="col-xs-12">
 			<article>
 				<header>
 					<h2>
@@ -14,7 +14,11 @@
 					<p>
 						<i>{{ .Date.Format "Mon Jan 2, 2006" }}</i>
 						{{ i18n "authored_by" }}
-						<b>{{ .Params.author | default .Site.Params.author }}</b>
+						<b>
+							<a href="https://github.com/{{ .Params.author | default .Site.Params.author }}">
+								{{ .Params.author | default .Site.Params.author }}
+							</a>
+						</b>
 					</p>
 				</header>
 
