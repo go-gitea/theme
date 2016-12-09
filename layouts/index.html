@@ -3,11 +3,8 @@
 
 <div class="container content">
 	<div class="row">
-		<div class="col-sm-4 col-md-3">
-			{{ partial "menu" . }}
-		</div>
-		<div class="col-sm-8 col-md-9">
-			{{ range where .Site.Pages "Type" "index" }}
+		<div class="col-xs-12">
+			{{ range .Site.Pages }}
 				{{ .Content }}
 			{{ end }}
 		</div>
