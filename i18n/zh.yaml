@@ -1,0 +1,32 @@
+- id: navbar_menu
+  translation: "菜单"
+
+- id: toplink_website
+  translation: "网站"
+
+- id: toplink_blog
+  translation: "博客"
+
+- id: toplink_docs
+  translation: "文档"
+
+- id: toplink_code
+  translation: "导入"
+
+- id: toplink_downloads
+  translation: "下载"
+
+- id: toplink_github
+  translation: "GitHub"
+
+- id: read_more
+  translation: "更多..."
+
+- id: authored_by
+  translation: "于"
+
+- id: page_prev
+  translation: "前一页"
+
+- id: page_next
+  translation: "后一页"
