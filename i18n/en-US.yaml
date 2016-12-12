@@ -1,24 +1,6 @@
 - id: navbar_menu
   translation: "Menu"
 
-- id: toplink_website
-  translation: "Website"
-
-- id: toplink_blog
-  translation: "Blog"
-
-- id: toplink_docs
-  translation: "Docs"
-
-- id: toplink_code
-  translation: "Import"
-
-- id: toplink_downloads
-  translation: "Downloads"
-
-- id: toplink_github
-  translation: "GitHub"
-
 - id: read_more
   translation: "More..."
 

@@ -11,6 +11,7 @@
 						{{ range .Children }}
 							<li class="nav-item">
 								<a class="nav-link{{ if $currentNode.IsMenuCurrent "sidebar" . }} active{{ end }}" href="{{ .URL | relLangURL }}">
+									{{ .Pre }}
 									{{ .Name }}
 								</a>
 							</li>

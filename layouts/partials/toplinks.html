@@ -1,36 +1,8 @@
-<li class="nav-item{{ if eq .Site.Params.Toplink "website" }} active{{ end }}">
-	<a class="nav-link" href="https://gitea.io">
-		<i class="fa fa-home"></i>
-		{{ i18n "toplink_website" }}
-	</a>
-</li>
-<li class="nav-item{{ if eq .Site.Params.Toplink "docs" }} active{{ end }}">
-	<a class="nav-link" href="https://docs.gitea.io">
-		<i class="fa fa-question"></i>
-		{{ i18n "toplink_docs" }}
-	</a>
-</li>
-<li class="nav-item{{ if eq .Site.Params.Toplink "blog" }} active{{ end }}">
-	<a class="nav-link" href="https://blog.gitea.io">
-		<i class="fa fa-rss"></i>
-		{{ i18n "toplink_blog" }}
-	</a>
-</li>
-<li class="nav-item{{ if eq .Site.Params.Toplink "redirects" }} active{{ end }}">
-	<a class="nav-link" href="https://code.gitea.io">
-		<i class="fa fa-code"></i>
-		{{ i18n "toplink_code" }}
-	</a>
-</li>
-<li class="nav-item">
-	<a class="nav-link" target="_blank" href="https://dl.gitea.io">
-		<i class="fa fa-download"></i>
-		{{ i18n "toplink_downloads" }}
-	</a>
-</li>
-<li class="nav-item">
-	<a class="nav-link" target="_blank" href="https://github.com/go-gitea">
-		<i class="fa fa-github"></i>
-		{{ i18n "toplink_github" }}
-	</a>
-</li>
+{{ $currentNode := . }}{{ range .Site.Menus.page }}
+	<li class="nav-item">
+		<a class="nav-link {{ .Post }}" href="{{ .URL }}">
+			<i class="fa fa-{{ .Pre }}"></i>
+			{{ .Name }}
+		</a>
+	</li>
+{{ end }}

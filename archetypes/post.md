@@ -4,5 +4,4 @@ author: "go-gitea"
 title: "Title"
 tags: ["tag"]
 draft: false
-type: "post"
 ---

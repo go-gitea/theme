@@ -25,15 +25,13 @@
 				{{ .Content }}
 			</article>
 		</div>
-	</div>
 
-	{{ if .Site.DisqusShortname }}
-		<div class="row">
+		{{ if .Site.DisqusShortname }}
 			<div class="col-xs-12">
 				{{ template "_internal/disqus.html" . }}
 			</div>
-		</div>
-	{{ end }}
+		{{ end }}
+	</div>
 </div>
 
 {{ partial "footer.html" . }}

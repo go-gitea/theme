@@ -3,6 +3,7 @@ license = "Apache-2.0"
 licenselink = "https://github.com/go-gitea/theme/blob/master/LICENSE"
 description = "General theme for Gitea pages"
 homepage = "https://github.com/go-gitea/theme"
+min_version = 0.17
 
 [author]
   name = "The Gitea Authors"
