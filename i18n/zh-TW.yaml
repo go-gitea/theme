@@ -1,0 +1,14 @@
+- id: navbar_menu
+  translation: "選單"
+
+- id: read_more
+  translation: "更多..."
+
+- id: authored_by
+  translation: "於"
+
+- id: page_prev
+  translation: "上一頁"
+
+- id: page_next
+  translation: "下一頁"
