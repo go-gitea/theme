@@ -32,6 +32,11 @@
 .content {
   margin: 64px auto;
 
+  pre {
+    padding: 16px;
+    background-color: $code-bg;
+  }
+
   blockquote{
     @extend .blockquote;
   }
