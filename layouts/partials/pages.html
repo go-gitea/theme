@@ -3,10 +3,8 @@
 		{{ $currentNode := . }}{{ range .Site.Menus.sidebar }}
 			{{ if .HasChildren }}
 				<li class="nav-item">
-					<a class="nav-link" href="#">
-						{{ .Pre }}
-						{{ .Name }}
-					</a>
+					{{ .Pre }}
+					{{ .Name }}
 					<ul>
 						{{ range .Children }}
 							<li class="nav-item">
