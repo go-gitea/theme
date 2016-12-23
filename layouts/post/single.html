@@ -3,7 +3,7 @@
 
 <div class="container content">
 	<div class="row">
-		<div class="col-xs-12">
+		<div class="col-lg-8 offset-lg-2">
 			<article>
 				<header>
 					<h2>
@@ -23,14 +23,16 @@
 				</header>
 
 				{{ .Content }}
+
+				{{ if .Site.DisqusShortname }}
+					<div class="row">
+						<div class="col-xs-12">
+							{{ partial "disqus.html" . }}
+						</div>
+					</div>
+				{{ end }}
 			</article>
 		</div>
-
-		{{ if .Site.DisqusShortname }}
-			<div class="col-xs-12">
-				{{ partial "disqus.html" . }}
-			</div>
-		{{ end }}
 	</div>
 </div>
 

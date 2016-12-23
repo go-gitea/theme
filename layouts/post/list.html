@@ -3,7 +3,7 @@
 
 <div class="container content">
 	<div class="row">
-		<div class="col-xs-12">
+		<div class="col-lg-8 offset-lg-2">
 			{{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}{{ range $paginator.Pages }}
 				<article>
 					<header>
