@@ -1,0 +1,14 @@
+- id: navbar_menu
+  translation: "Menu"
+
+- id: read_more
+  translation: "Leia mais..."
+
+- id: authored_by
+  translation: "por"
+
+- id: page_prev
+  translation: "Anterior"
+
+- id: page_next
+  translation: "Próximo"
