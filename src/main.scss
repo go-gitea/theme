@@ -43,7 +43,9 @@
 }
 
 aside ul.nav {
-  border-right: 1px solid lighten($accent-color, 30);
+  @include media-breakpoint-up(sm) {
+    border-right: 1px solid lighten($accent-color, 30);
+  }
 
   ul {
     margin: 0;
