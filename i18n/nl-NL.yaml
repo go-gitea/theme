@@ -1,0 +1,14 @@
+- id: navbar_menu
+  translation: "Menu"
+
+- id: read_more
+  translation: "Lees meer..."
+
+- id: authored_by
+  translation: "door"
+
+- id: page_prev
+  translation: "Vorige"
+
+- id: page_next
+  translation: "Volgende"
