@@ -1,6 +1,8 @@
 @import "colors";
 @import "../node_modules/bootstrap/scss/bootstrap";
 
+@import "landingpage";
+
 .navbar {
   padding: 21px 32px;
   border-bottom: 1px solid $accent-color;

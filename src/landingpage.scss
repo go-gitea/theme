@@ -1,0 +1,19 @@
+.landingpage {
+	@extend .content;
+	text-align: center;
+
+	.jumbotron {
+		background: none;
+	}
+
+	.logo {
+		width: 220px;
+		max-width:100%;
+	}
+
+	svg.octicon {
+		height: 24px;
+		margin-right: 8px;
+		fill: $brand-primary;
+	}
+}
