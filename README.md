@@ -1,7 +1,7 @@
 # Gitea: Theme
 
 [![Build Status](http://drone.gitea.io/api/badges/go-gitea/theme/status.svg)](http://drone.gitea.io/go-gitea/theme)
-[![Join the chat at https://gitter.im/go-gitea/gitea](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/go-gitea/gitea)
+[![Join the chat at https://img.shields.io/discord/322538954119184384.svg](https://img.shields.io/discord/322538954119184384.svg)](https://discord.gg/NsatcWJ)
 
 This is a Hugo theme that gets used within all of our websites like our blog,
 documentation and also the redirects. If you commit any changes to the `master`
