@@ -5,6 +5,11 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta property="og:title" content="{{ if not .IsHome }}{{ .Title }} - {{ end }}{{ .Site.Title }}"></meta>
+		<meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.description }}{{ . }}{{ end }}{{ end }}{{ end }}" />
+		<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}"></meta>
+		<meta property="og:url" content="{{ .Permalink }}"></meta>
+		<meta property="og:image" content="https://docs.gitea.io/images/gitea.png"></meta>
 		{{ .Hugo.Generator }}
 
 		<title>{{ if not .IsHome }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
