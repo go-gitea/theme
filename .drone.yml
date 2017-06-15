@@ -1,14 +1,11 @@
-workspace:
-  path: src
-
 pipeline:
   build:
-    image: library/node:latest
+    image: node:8.1.1
     commands:
-      - npm install -q
-      - npm run clean
-      - npm run build
-      - npm run release
+      - yarn install
+      - yarn run clean
+      - yarn run build
+      - yarn run release
 
   release:
     image: plugins/s3
@@ -38,4 +35,4 @@ pipeline:
     webhook_token: ${WEBHOOK_TOKEN}
     when:
       event: [ push, tag, pull_request ]
-      status: [ failure ]
+      status: [ changed, failure ]
