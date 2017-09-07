@@ -1,6 +1,17 @@
+workspace:
+  base: /srv/app
+  path: src
+
+clone:
+  git:
+    image: plugins/git:1
+    depth: 50
+    tags: true
+
 pipeline:
   build:
-    image: node:8.1.1
+    image: webhippie/nodejs:latest
+    pull: true
     commands:
       - yarn install
       - yarn run clean
@@ -8,7 +19,10 @@ pipeline:
       - yarn run release
 
   release:
-    image: plugins/s3
+    image: plugins/s3:1
+    pull: true
+    secrets: [ s3_access_key, s3_secret_key ]
+    endpoint: https://storage.gitea.io
     path_style: true
     strip_prefix: dist/
     source: dist/master.tar.gz
@@ -18,7 +32,9 @@ pipeline:
       branch: [ master ]
 
   trigger:
-    image: plugins/downstream
+    image: plugins/downstream:1
+    pull: true
+    secrets: [ downstream_token ]
     server: https://drone.gitea.io
     repositories:
       - go-gitea/website
@@ -30,9 +46,9 @@ pipeline:
       branch: [ master ]
 
   discord:
-    image: appleboy/drone-discord
-    webhook_id: ${WEBHOOK_ID}
-    webhook_token: ${WEBHOOK_TOKEN}
+    image: appleboy/drone-discord:1.0.0
+    pull: true
+    secrets: [ discord_webhook_id, discord_webhook_token ]
     when:
       event: [ push, tag, pull_request ]
       status: [ changed, failure ]
