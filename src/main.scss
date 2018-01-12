@@ -68,3 +68,8 @@ aside ul.nav {
     }
   }
 }
+
+// see https://github.com/go-gitea/theme/issues/48
+article img {
+  max-width: 100%;
+}
