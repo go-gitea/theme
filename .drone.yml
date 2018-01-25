@@ -40,7 +40,7 @@ pipeline:
     repositories:
       - go-gitea/website
       - go-gitea/blog
-      - go-gitea/docs
+      - go-gitea/gitea
       - go-gitea/redirects
     when:
       event: [ push ]
