@@ -63,5 +63,5 @@ for the full license text.
 ## Copyright
 
 ```
-Copyright (c) 2016 The Gitea Authors <https://gitea.io>
+Copyright (c) 2018 The Gitea Authors <https://gitea.io>
 ```
