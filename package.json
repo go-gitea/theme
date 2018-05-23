@@ -23,7 +23,8 @@
     "watch": "gulp watch"
   },
   "dependencies": {
-    "bootstrap": "4.0.0-alpha.5"
+    "bulma": "^0.7.1",
+    "bulmaswatch": "^0.6.2"
   },
   "devDependencies": {
     "gulp": "^3.9.1",

@@ -1,0 +1,36 @@
+{{ partial "header.html" . }}
+
+<section class="hero is-primary homepage-hero">
+	<!-- Hero head: will stick at the top -->
+	<div class="hero-head">
+		{{ partial "navbar.html" . }}
+	</div>
+	<!-- Hero content: will be in the middle -->
+	<div class="hero-body">
+		<div class="container has-text-centered">
+			{{ .Content }}
+		</div>
+	</div>
+
+	<div class="hero-foot">
+		<img src="{{ .Site.BaseURL }}/images/screenshot.jpg"/>
+	</div>
+</section>
+
+<section class="hero is-link feature-shoutout">
+	<div class="hero-body">
+		<div class="container">
+			<div class="columns">
+			{{ range $index, $element := .Data.Pages }}
+				{{ if eq .Section "features" }}
+					<div class="column">
+						{{ .Content }}
+					</div>
+				{{ end }}
+			{{ end }}
+			</div>
+		</div>
+	</div>
+</section>
+
+{{ partial "footer.html" . }}

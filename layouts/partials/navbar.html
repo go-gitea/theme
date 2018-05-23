@@ -1,13 +1,20 @@
-<nav class="navbar navbar-light bg-faded">
-	<button class="navbar-toggler hidden-md-up float-xs-right" type="button" data-toggle="collapse" data-target="#navbar-responsive" aria-controls="navbar-responsive" aria-expanded="false" aria-label="{{ i18n "navbar_menu" }}"></button>
-
-	<a class="navbar-brand" href="{{ .Site.BaseURL }}">
-		<img src="{{ .Site.BaseURL }}images/gitea.png" alt="{{ .Site.Title }}">
-	</a>
-
-	<div class="collapse navbar-toggleable-sm" id="navbar-responsive">
-		<ul class="nav navbar-nav float-xs-left float-md-right">
-			{{ partial "toplinks.html" . }}
-		</ul>
+<nav class="navbar">
+	<div class="container">
+		<div class="navbar-brand">
+			<a class="navbar-item" href="{{ .Site.BaseURL }}">
+				<img src="{{ .Site.BaseURL }}images/gitea.png" alt="{{ .Site.Title }}">
+			</a>
+			<span class="navbar-burger burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+		</div>
+		<div class="navbar-menu" id="navMenu">
+			<div class="navbar-end">
+				{{ partial "toplinks.html" . }}
+			</div>
+		</div>
+		<div class="navbar-background" id="navbar-background"></div>
 	</div>
 </nav>

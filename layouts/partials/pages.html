@@ -1,29 +1,28 @@
-<aside>
-	<ul class="nav">
-		{{ $currentNode := . }}{{ range .Site.Menus.sidebar }}
-			{{ if .HasChildren }}
-				<li class="nav-item">
+<aside class="menu">
+	{{ $currentNode := . }}{{ range .Site.Menus.sidebar }}
+		{{ if .HasChildren }}
+			<p class="menu-label">
+				{{ .Pre }}
+				{{ .Name }}
+			</p>
+			<ul class="menu-list">
+				{{ range .Children }}
+					<li>
+						<a href="{{ .URL | relLangURL }}" {{ if $currentNode.IsMenuCurrent "sidebar" . }}class="is-active"{{ end }}>
+							{{ .Pre }}
+							{{ .Name }}
+						</a>
+					</li>
+				{{ end }}
+			</ul>
+		{{ else }}
+			<li>
+				<a href="{{ .URL | relLangURL }}">
 					{{ .Pre }}
 					{{ .Name }}
-					<ul>
-						{{ range .Children }}
-							<li class="nav-item">
-								<a class="nav-link{{ if $currentNode.IsMenuCurrent "sidebar" . }} active{{ end }}" href="{{ .URL | relLangURL }}">
-									{{ .Pre }}
-									{{ .Name }}
-								</a>
-							</li>
-						{{ end }}
-					</ul>
-				</li>
-			{{ else }}
-				<li class="nav-item">
-					<a class="nav-link{{ if $currentNode.HasMenuCurrent "sidebar" . }} active{{ end }}" href="{{ .URL | relLangURL }}">
-						{{ .Pre }}
-						{{ .Name }}
-					</a>
-				</li>
-			{{ end }}
+				</a>
+			</li>
 		{{ end }}
+	{{ end }}
 	</ul>
 </aside>

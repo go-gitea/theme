@@ -1,38 +1,26 @@
 {{ partial "header.html" . }}
 {{ partial "navbar.html" . }}
 
-<div class="container content">
-	<div class="row">
-		<div class="col-lg-8 offset-lg-2">
-			<article>
-				<header>
-					<h2>
-						<a href="{{ .Permalink }}">
-							{{ .Title }}
-						</a>
-					</h2>
-					<p>
-						<i>{{ .Date.Format "Mon Jan 2, 2006" }}</i>
-						{{ i18n "authored_by" }}
-						<b>
-							<a href="https://github.com/{{ .Params.author | default .Site.Params.author }}">
-								{{ .Params.author | default .Site.Params.author }}
-							</a>
-						</b>
-					</p>
-				</header>
+<div class="container is-centered page">
+	<div class="content">
+		<h2>
+			<a href="{{ .Permalink }}">
+				{{ .Title }}
+			</a>
+		</h2>
+		<p>
+			<i>{{ .Date.Format "Mon Jan 2, 2006" }}</i>
+			{{ i18n "authored_by" }}
+			<b>
+				<a href="https://github.com/{{ .Params.author | default .Site.Params.author }}">
+					{{ .Params.author | default .Site.Params.author }}
+				</a>
+			</b>
+		</p>
 
-				{{ .Content }}
+		{{ .Content }}
 
-				{{ if .Site.DisqusShortname }}
-					<div class="row">
-						<div class="col-xs-12">
-							{{ partial "disqus.html" . }}
-						</div>
-					</div>
-				{{ end }}
-			</article>
-		</div>
+		{{ partial "disqus.html" . }}
 	</div>
 </div>
 

@@ -1,8 +1,7 @@
+<span class="navbar-item logo"><img src="{{ .Site.BaseURL }}images/gitea.png" alt="{{ .Site.Title }}"></span>
 {{ $currentNode := . }}{{ range .Site.Menus.page }}
-	<li class="nav-item">
-		<a class="nav-link {{ .Post }}" href="{{ .URL }}">
-			<i class="fa fa-{{ .Pre }}"></i>
-			{{ .Name }}
-		</a>
-	</li>
+	<a class="navbar-item" href="{{ .URL }}">
+		<i class="fa fa-{{ .Pre }}"></i>&nbsp;
+		{{ .Name }}
+	</a>
 {{ end }}
