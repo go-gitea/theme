@@ -1,16 +1,18 @@
 {{ partial "header.html" . }}
 {{ partial "navbar.html" . }}
 
-<div class="container is-centered page">
-	<div class="columns">
-		<div class="column is-one-quarter">
-			{{ partial "menu" . }}
-		</div>
-		<div class="column">
-			<div class=" content">
-				{{ .Content }}
+<div class="section">
+	<div class="container is-centered page">
+		<div class="columns">
+			<div class="column is-one-quarter">
+				{{ partial "menu" . }}
+			</div>
+			<div class="column">
+				<div class=" content">
+					{{ .Content }}
 
-				{{ partial "disqus.html" . }}
+					{{ partial "disqus.html" . }}
+				</div>
 			</div>
 		</div>
 	</div>

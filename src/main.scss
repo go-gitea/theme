@@ -42,23 +42,19 @@
   }
 }
 
-.page{
-  margin: 2em auto;
+.page .card{
+  margin-bottom: 2em;
 
-  .card{
-    margin-bottom: 2em;
+  background-color: #fff;
+  box-shadow: 0 2px 3px rgba(10,10,10,.1),0 0 0 1px rgba(10,10,10,.1);
+  color: #4a4a4a;
+  max-width: 100%;
+  position: relative;
+  border: none;
+  border-radius: 0.2em;
 
-    background-color: #fff;
-    box-shadow: 0 2px 3px rgba(10,10,10,.1),0 0 0 1px rgba(10,10,10,.1);
-    color: #4a4a4a;
-    max-width: 100%;
-    position: relative;
-    border: none;
-    border-radius: 0.2em;
-
-    .media-content a{
-      display: block;
-    }
+  .media-content a{
+    display: block;
   }
 }
 
