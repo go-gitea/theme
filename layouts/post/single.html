@@ -1,27 +1,29 @@
 {{ partial "header.html" . }}
 {{ partial "navbar.html" . }}
 
-<div class="container is-centered page">
-	<div class="content">
-		<h2>
-			<a href="{{ .Permalink }}">
-				{{ .Title }}
-			</a>
-		</h2>
-		<p>
-			<i>{{ .Date.Format "Mon Jan 2, 2006" }}</i>
-			{{ i18n "authored_by" }}
-			<b>
-				<a href="https://github.com/{{ .Params.author | default .Site.Params.author }}">
-					{{ .Params.author | default .Site.Params.author }}
+<section class="section">
+	<div class="container is-centered page">
+		<div class="content">
+			<h2>
+				<a href="{{ .Permalink }}">
+					{{ .Title }}
 				</a>
-			</b>
-		</p>
+			</h2>
+			<p>
+				<i>{{ .Date.Format "Mon Jan 2, 2006" }}</i>
+				{{ i18n "authored_by" }}
+				<b>
+					<a href="https://github.com/{{ .Params.author | default .Site.Params.author }}">
+						{{ .Params.author | default .Site.Params.author }}
+					</a>
+				</b>
+			</p>
 
-		{{ .Content }}
+			{{ .Content }}
 
-		{{ partial "disqus.html" . }}
+			{{ partial "disqus.html" . }}
+		</div>
 	</div>
-</div>
+</section>
 
 {{ partial "footer.html" . }}

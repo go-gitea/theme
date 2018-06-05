@@ -1,40 +1,41 @@
 {{ partial "header.html" . }}
 {{ partial "navbar.html" . }}
 
-<div class="container content page">
-	{{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}{{ range $paginator.Pages }}
-		<div class="card">
-			<div class="card-content">
-				<div class="media">
-					<div class="media-content">
-						<a class="title is-4" href="{{ .Permalink }}">{{ .Title }}</a>
-						<p class="subtitle is-6">{{ .Date.Format "Mon Jan 2, 2006" }} {{ i18n "authored_by" }}
-							<a href="https://github.com/{{ .Params.author | default .Site.Params.author }}">
-							{{ .Params.author | default .Site.Params.author }}
-							</a>
-						</p>
+<section class="section">
+	<div class="container content page">
+		{{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}{{ range $paginator.Pages }}
+			<div class="card">
+				<div class="card-content">
+					<div class="media">
+						<div class="media-content">
+							<a class="title is-4" href="{{ .Permalink }}">{{ .Title }}</a>
+							<p class="subtitle is-6">{{ .Date.Format "Mon Jan 2, 2006" }} {{ i18n "authored_by" }}
+								<a href="https://github.com/{{ .Params.author | default .Site.Params.author }}">
+									{{ .Params.author | default .Site.Params.author }}
+								</a>
+							</p>
+						</div>
 					</div>
-				</div>
 
-				<div class="content">
-					{{ .Summary }}
-				</div>
+					<div class="content">
+						{{ .Summary }}
+					</div>
 
-				<a href="{{ .Permalink }}" class="button is-success is-outlined">
-					{{ i18n "read_more" }}
-				</a>
+					<a href="{{ .Permalink }}" class="button is-success is-outlined">
+						{{ i18n "read_more" }}
+					</a>
+				</div>
 			</div>
-		</div>
-	{{ end }}
+		{{ end }}
 
-	<nav class="pagination is-centered" role="navigation" aria-label="pagination">
-		{{ if .Paginator.HasPrev}}
-			<a class="pagination-previous" href="{{ .Paginator.Prev.URL }}">{{ i18n "page_prev" }}</a>
-		{{ end }}
-		{{ if .Paginator.HasNext }}
-			<a class="pagination-next" href="{{ .Paginator.Next.URL }}">{{ i18n "page_next" }}</a>
-		{{ end }}
-	</nav>
-</div>
+		<nav class="pagination is-centered" role="navigation" aria-label="pagination">
+			{{ if .Paginator.HasPrev}}
+				<a class="pagination-previous" href="{{ .Paginator.Prev.URL }}">{{ i18n "page_prev" }}</a>
+			{{ end }} {{ if .Paginator.HasNext }}
+				<a class="pagination-next" href="{{ .Paginator.Next.URL }}">{{ i18n "page_next" }}</a>
+			{{ end }}
+		</nav>
+	</div>
+</section>
 
 {{ partial "footer.html" . }}
