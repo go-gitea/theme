@@ -16,13 +16,13 @@ it into your `themes/gitea` folder and enable the theme with the
 
 ## Development
 
-We choose [yarn](https://yarnpkg.com) to fetch our dependencies and
+We choose [npm](https://npmjs.org) to fetch our dependencies and
 [gulp](http://gulpjs.com/) for the pipeline. We won't cover the installation of
-nodejs or yarn, for that you can find enough guides depending on your operating
+nodejs or npm, for that you can find enough guides depending on your operating
 system. First of all you have to install the required dependencies:
 
 ```
-yarn install -q
+npm install
 ```
 
 After you have successfully installed the required dependencies you should be
@@ -30,9 +30,9 @@ able to use these commands to just clean and build generated sources of the
 theme:
 
 ```
-yarn run clean
-yarn run build
-yarn run release
+npm run clean
+npm run build
+npm run release
 ```
 
 If you want to do more development on the theme we suggest to use the `watch`
@@ -40,7 +40,7 @@ task we have defined to get the changes directly built after saving changes to
 a file:
 
 ```
-yarn run watch
+npm run watch
 ```
 
 When you are done with your changes just create a pull request, after merging
@@ -63,5 +63,5 @@ for the full license text.
 ## Copyright
 
 ```
-Copyright (c) 2018 The Gitea Authors <https://gitea.io>
+Copyright (c) 2019 The Gitea Authors <https://gitea.io>
 ```

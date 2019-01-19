@@ -16,8 +16,22 @@ var sources = [
     'theme.toml'
 ];
 
-gulp.task('default', ['build']);
-gulp.task('build', ['sass']);
+var build = function () {
+    return gulp.src('./src/main.scss')
+        .pipe(sourcemaps.init())
+        .pipe(sass().on('error', sass.logError))
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest('./static/styles'));
+}
+
+gulp.task('clean', function () {
+    return gulp.src(['dist', 'static/styles'], { allowEmpty: true })
+        .pipe(clean());
+});
+
+gulp.task('watch', function () {
+    return gulp.watch('./src/*.scss', build);
+});
 
 gulp.task('release', function () {
     return gulp.src(sources)
@@ -26,19 +40,5 @@ gulp.task('release', function () {
         .pipe(gulp.dest('dist'))
 });
 
-gulp.task('sass', function () {
-    return gulp.src('./src/main.scss')
-        .pipe(sourcemaps.init())
-        .pipe(sass().on('error', sass.logError))
-        .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest('./static/styles'));
-});
-
-gulp.task('clean', function () {
-    return gulp.src(['dist', 'static/styles'])
-        .pipe(clean());
-});
-
-gulp.task('watch', function () {
-    return gulp.watch('./src/*.scss', ['sass']);
-});
+gulp.task('build', build);
+gulp.task('default', build);

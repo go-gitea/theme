@@ -13,10 +13,10 @@ pipeline:
     image: webhippie/nodejs:latest
     pull: true
     commands:
-      - yarn install
-      - yarn run clean
-      - yarn run build
-      - yarn run release
+      - npm install
+      - npm run clean
+      - npm run build
+      - npm run release
 
   release:
     image: plugins/s3:1
