@@ -9,7 +9,7 @@
 					</p>
 					<p>
 						{{ $lang := .Lang }}{{ $base := .Site.BaseURL }}{{ range .Site.Languages }}
-						<a class="nav-link" href="{{ $base }}{{ .Lang }}">{{ .LanguageName }}</a>
+						<a class="nav-link" href="{{ $base }}{{ .Lang }}" hreflang="{{ .Lang }}">{{ .LanguageName }}</a>
 						{{ end }}
 					</p>
 				</div>
